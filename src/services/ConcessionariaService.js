@@ -1,4 +1,4 @@
-import {Carro} from '@/src/models/Concessionaria';
+import {Concessionaria} from '@/src/models/Concessionaria';
 
 export class ConcessionariaService{
     constructor(repository){

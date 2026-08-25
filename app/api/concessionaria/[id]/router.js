@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
-import { CarroRepository } from '@/src/repository/ConcessionariaRepository';
-import { CarroService } from '@/src/services/ConcessionariaService';
+import { ConcessionariaRepository } from '@/src/repository/ConcessionariaRepository';
+import { ConcessionariaService } from '@/src/services/ConcessionariaService';
 
 
 const service = new ConcessionariaService(new ConcessionariaRepository());
@@ -26,7 +26,7 @@ export async function PUT(req, { params }) {
         const body = await req.json();
 
 
-        const res = await service.atualizar(id, body.nome, body.tipo);
+        const res = await service.atualizar(id, body.nome, body.cnpj, body.cidade);
         return NextResponse.json(res, { status: 200 }); //sucesso
     } catch (e) {
         return NextResponse.json({ erro: e.message }, { status: 400 }); //erro de requisição

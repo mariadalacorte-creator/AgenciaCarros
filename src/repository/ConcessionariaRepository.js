@@ -27,7 +27,7 @@ export class ConcessionariaRepository {
 
         if (!dados) return null;
 
-        return new Concessionaria(dados.id, dados.nome, dados.cnpj, dados.cidade);
+        return new Concessionaria(dados.nome, dados.cnpj, dados.cidade, dados.id);
     }
 
     async atualizar(id, obj) {
