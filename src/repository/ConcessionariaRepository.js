@@ -15,7 +15,7 @@ export class ConcessionariaRepository {
 
     async listarTodos() {
         const dados = await prisma.concessionaria.findMany();
-        return dados.map(d => new Concessionaria( d.nome, d.cnpj, d.cidade, d.id));
+        return dados.map(d => new Concessionaria( d.id, d.nome, d.cnpj, d.cidade));
     }
 
     async buscarPorId(id) {
@@ -27,7 +27,7 @@ export class ConcessionariaRepository {
 
         if (!dados) return null;
 
-        return new Concessionaria(dados.nome, dados.cnpj, dados.cidade, dados.id);
+        return new Concessionaria(d.id, d.nome, d.cnpj, d.cidade);
     }
 
     async atualizar(id, obj) {

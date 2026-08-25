@@ -15,7 +15,7 @@ export async function GET(){
 export async function POST(req){
 try{
     const body = await req.json();
-    const res = await service.cadastrar(body.nome, body.tipo);
+    const res = await service.cadastrar(body.nome, body.cnpj, body.cidade);
     return NextResponse.json(res, {status: 201});
 }
 catch (e){
