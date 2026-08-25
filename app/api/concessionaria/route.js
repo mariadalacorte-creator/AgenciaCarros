@@ -7,7 +7,7 @@ const service = new ConcessionariaService(new ConcessionariaRepository());
 export async function GET(){
     try{
         const todasConcessionarias = await service.listar();
-        return NextResponse.json(todas, {status: 200});
+        return NextResponse.json(todasConcessionarias, {status: 200});
     } catch (e) {
         return NextResponse.json({erro: e.message}, {status: 500});
     }
