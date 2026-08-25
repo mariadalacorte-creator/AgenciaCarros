@@ -26,7 +26,7 @@ export class CarroRepository {
 
         if (!dados) return null;
 
-        return new Carro(dados.id, dados.nome, dados.tipo);
+        return new Carro(dados.nome, dados.tipo, dados.id);
     }
 
     async atualizar(id, obj) {

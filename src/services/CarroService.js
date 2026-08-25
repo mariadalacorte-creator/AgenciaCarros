@@ -6,7 +6,7 @@ export class CarroService{
     }
 
     async cadastrar(nome, tipo){
-        if (!nome || nome.lenght < 2)
+        if (!nome || nome.length < 2)
             throw new Error("O nome deve ter no mínimo 2 caracteres");
         if (!tipo)
             throw new Error ("O tipo do veículo é obrigatório");
@@ -29,7 +29,7 @@ export class CarroService{
         if (!nome || !tipo)
             throw new Error("O nome e o tipo são obrigatórios");
         await this.buscarPorId(id); //garante que esxista antes de atualizar
-        return await this.repository.atualizar(id, CarroAtualizado);
+        return await this.repository.atualizar(id, new Carro(nome, tipo));
     }
 
     async excluir (id){

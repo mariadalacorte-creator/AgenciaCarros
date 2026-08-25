@@ -8,9 +8,10 @@ datasource db{
 }
 
 model carro{
-    id Int @id @default(autoincrement())
     nome String @db.VarChar(255)
     tipo String @db.VarChar(255)
+    id Int @id @default(autoincrement())
+    
 }
 
 model concessionaria{
